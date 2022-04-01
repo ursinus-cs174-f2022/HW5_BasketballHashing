@@ -18,6 +18,7 @@ class HashableString: public Hashable {
     public:
         string s;    
         HashableString(string s);
+        ~HashableString(){};
         size_t getHash();
         bool equals(Hashable* other);
         Cloneable* clone();
@@ -27,6 +28,7 @@ class HashableInt: public Hashable {
     public:
         int i;
         HashableInt(int i);
+        ~HashableInt(){};
         size_t getHash();
         bool equals(Hashable* other);
         Cloneable* clone();

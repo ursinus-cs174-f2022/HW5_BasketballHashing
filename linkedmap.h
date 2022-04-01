@@ -16,8 +16,8 @@ class LinkedNode {
 class LinkedMap: public Map {
     private:
         void removeFirst();
-    public:
         LinkedNode* head;
+    public:
         LinkedMap();
         ~LinkedMap();
         // It is assumed that the key is both Hashable and Cloneable

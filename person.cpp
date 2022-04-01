@@ -26,11 +26,11 @@ class Person: public Cloneable {
 int main() {
     Map* m = new LinkedMap();
     HashableString name1("chris");
-    Person p1("chris", 31);
+    Person p1("chris", 33);
     m->put(&name1, &p1);
 
     HashableString name2("celia");
-    Person p2("celia", 31);
+    Person p2("celia", 32);
     m->put(&name2, &p2);
 
     HashableString name3("james");
@@ -39,12 +39,25 @@ int main() {
     
     // Make sure the map contains a key with the string "chris"
     HashableString chris("chris");
-    cout << m->containsKey(&chris) << endl;
+    cout << "Map should contain Chris at this point: ";
+    if (m->containsKey(&chris)) {
+        cout << "It does!\n";
+    }
+    else {
+        cout << "It doesn't :(\n";
+    }
     // Get the value associated to "chris" and print out the age
     Person* p = (Person*) m->get(&chris);
-    cout << p->getAge() << endl;
+    cout << "Chris's age is " << p->getAge() << endl;
     // Remove "chris," and make sure it's no longer in the map
     m->remove(&chris);
+    cout << "Chris has been removed, so the map should not contain Chris anymore: ";
+    if (m->containsKey(&chris)) {
+        cout << "But it still does :(";
+    }
+    else {
+        cout << "And it doesn't!\n";
+    }
     cout << m->containsKey(&name1) << endl;
 
     delete m;
