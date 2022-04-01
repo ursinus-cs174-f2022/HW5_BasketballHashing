@@ -1,21 +1,21 @@
 #include "player.h"
 
-Player::Player(string name, string school, int height, int weight, int year) {
+Player::Player(string name, int height, int weight, string school, int year) {
     this->name = name;
-    this->school = school;
     this->height = height;
     this->weight = weight;
+    this->school = school;
     this->year = year;
 }
 Cloneable* Player::clone() {
-    return new Player(name, school, height, weight, year);
+    return new Player(name, height, weight, school, year);
 }
-void Player::printPlayer() {
+void Player::print() {
     cout << name << endl;
-    cout << "Birth Year: " << year << endl;
-    cout << "School: " << school << endl;
     cout << "Height: " << height << " cm" << endl;
     cout << "Weight: " << weight << " kg" << endl;
+    cout << "School: " << school << endl;
+    cout << "Birth Year: " << year << endl;
 }
 
 /**

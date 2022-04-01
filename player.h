@@ -13,14 +13,14 @@
 class Player: public Cloneable {
     private:
         string name;
-        string school;
         int height;
         int weight;
+        string school;
         int year;
     public:
-        Player(string name, string school, int height, int weight, int year);
+        Player(string name, int height, int weight, string school, int year);
         Cloneable* clone();
-        void printPlayer();
+        void print();
 };
 
 /**
