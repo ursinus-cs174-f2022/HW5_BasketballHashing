@@ -7,7 +7,6 @@
 #include <fstream>
 #include "hashable.h"
 #include "cloneable.h"
-#include "hashtable.h"
 #include "linkedmap.h"
 
 class Player: public Cloneable {
